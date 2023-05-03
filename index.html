@@ -1,0 +1,343 @@
+<html>
+
+<head>
+    <title>Assigment 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            margin: 0px;
+            background-color: #fcde67;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --greenL: rgb(15, 110, 15);
+        }
+
+        .header {
+            text-align: center;
+            text-transform: capitalize;
+            color: #030e12;
+            margin: 5px;
+        }
+
+        .header h1 {
+            background-color: #5bccf6;
+        }
+
+        .hero {
+            margin: 10px;
+            border: solid 2px #bac1c4;
+            background-color: #5bccf6;
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            min-height: 190px;
+            width: 300px;
+            vertical-align: top;
+            border-bottom: #030e12 2px solid;
+            border-right: #030e12 2px solid;
+            border-left: #971497 2px solid;
+            border-top: #971497 2px solid;
+            box-shadow:  5px 5px rgb(70, 68, 68);
+
+        }
+
+        .hero input {
+            background-color: inherit;
+            border: none;
+            border-bottom: solid 2px rgb(28, 44, 3);
+            text-align: center;
+            outline: none;
+        }
+
+        .hero #head_box {
+            font-weight: 400;
+            padding: 3px;
+            color: #030e12;
+
+
+        }
+
+        .hero button {
+            border: none;
+            color: green;
+            border: green;
+            margin: 3px;
+            width: 50%;
+        }
+
+        button:hover {
+
+            margin: 0px;
+            border: rgb(64, 25, 202) 3px solid;
+            background-color: #030e12;
+
+        }
+
+        #logo {
+
+            color: #971497;
+            text-transform: none;
+            font-family: helvetica;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Assigment 1</h1>
+    </div>
+    <div class="hero">
+        <label for="" id="head_box">Enter the Number to get Month</label>
+        <br><br>
+        <input type="text" id="monNum">
+        <br><br>
+
+        <button onclick="monthNum()">Find</button>
+
+        <h4>The Month is<p id="month"></p>
+        </h4>
+    </div>
+
+    <div class="hero">
+        <label for="" id="head_box">Enter the Number to get Factorial</label>
+        <br><br>
+        <input type="text" id="fact">
+        <br><br>
+
+        <button onclick="factCal()">Find</button>
+
+        <h4>The Factorial is<p id="ansFact"></p>
+        </h4>
+    </div>
+
+    <div class="hero">
+        <label for="" id="head_box">Enter the Number to find Nth prime</label>
+        <br><br>
+        <input type="text" id="prime">
+        <br><br>
+
+        <button onclick="Nprime()">Find</button>
+
+        <h4>The Prime is<p id="ansPrime"></p>
+        </h4>
+    </div>
+
+    <br>
+
+    <div class="hero">
+        <label for="" id="head_box">Enter the First Number </label>
+        <br><br>
+        <input type="text" id="num1">
+        <br><br>
+        <label for="" id="head_box">Enter the second Number </label>
+        <br><br>
+        <input type="text" id="num2">
+        <br><br>
+        <label for="" id="head_box">Enter the third Number </label>
+        <br><br>
+        <input type="text" id="num3">
+        <br><br>
+
+        <button onclick="calLarge()">Find</button>
+
+        <h4>The Larger Number is<p id="ansL"></p>
+        </h4>
+    </div>
+
+    <div class="hero">
+        <label for="" id="head_box">Enter the First Number </label>
+        <br><br>
+        <input type="text" id="num11">
+        <br><br>
+        <label for="" id="head_box">Enter the second Number </label>
+        <br><br>
+        <input type="text" id="num22">
+        <br><br>
+        <label for="" id="head_box">Enter the third Number </label>
+        <br><br>
+        <input type="text" id="num33">
+        <br><br>
+
+        <button onclick="calLargeT()">Find</button>
+
+        <h4>The Larger Number is<p id="ansLL"></p>
+        </h4>
+    </div>
+    <div class="header">
+
+        <h1>
+            <Marquee>Developed by - <span id="logo"><i>Raj(at+1)</i></span>
+            </Marquee>
+        </h1>
+    </div>
+
+    <script>
+        function monthNum() {
+
+            var n = document.getElementById("monNum").value;
+            n = parseInt(n);
+            if (isNaN(n)) {
+
+                document.getElementById("month").innerHTML = "Invalid Input";
+                document.getElementById("month").style.color = "red";
+                return;
+            }
+            var ans = "";
+
+            switch (n) {
+                case 1: ans = "January";
+                    break;
+                case 2: ans = "Febuary";
+                    break;
+                case 3: ans = "March";
+                    break;
+                case 4: ans = "April";
+                    break;
+                case 5: ans = "May";
+                    break;
+                case 6: ans = "June";
+                    break;
+                case 7: ans = "July";
+                    break;
+                case 8: ans = "August";
+                    break;
+                case 9: ans = "September";
+                    break;
+                case 10: ans = "October";
+                    break;
+                case 11: ans = "November";
+                    break;
+                case 12: ans = "December";
+                    break;
+                default: ans = "Not valid Input";
+            }
+            document.getElementById("month").innerHTML = ans;
+
+            document.getElementById("month").style.color = "var(--greenL)";
+
+        }
+
+        function fact(n) {
+            if (n == 1)
+                return n;
+            else
+                return n * fact(n - 1);
+        }
+
+        function factCal() {
+
+            let n = document.getElementById("fact").value;
+            n = parseInt(n);
+            if (isNaN(n)) {
+
+                document.getElementById("ansFact").innerHTML = "Invalid Input";
+                document.getElementById("ansFact").style.color = "red";
+                return;
+            }
+            var ans = fact(n);
+
+
+            document.getElementById("ansFact").innerHTML = ans;
+            document.getElementById("ansFact").style.color = "var(--greenL)";
+
+
+        }
+        function isPrime(num) {
+
+            if (num <= 1)
+                return 0;
+            if (num <= 3) {
+                return 1;
+            }
+
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0)
+                    return 0;
+            }
+            return 1;
+
+        }
+        function Nprime() {
+            let n = document.getElementById("prime").value;
+            n = parseInt(n);
+            if (isNaN(n)) {
+
+                document.getElementById("ansPrime").innerHTML = "Invalid Input";
+                document.getElementById("ansPrime").style.color = "red";
+                return;
+            }
+
+            var ans = 2;
+
+            while (n > 0) {
+
+                if (isPrime(ans) == 1) {
+                    n--;
+                }
+                ans++;
+
+
+
+            }
+            document.getElementById("ansPrime").innerHTML = ans - 1;
+            document.getElementById("ansPrime").style.color = "var(--greenL)";
+        }
+
+        function calLarge() {
+
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var num3 = parseInt(document.getElementById("num3").value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+
+                document.getElementById("ansL").innerHTML = "Invalid Input";
+                document.getElementById("ansL").style.color = "red";
+                return;
+            }
+
+
+            var ans = num1;
+
+            if (ans < num2) {
+                ans = num2;
+            }
+            if (ans < num3) {
+                ans = num3;
+            }
+            document.getElementById("ansL").innerHTML = ans;
+            document.getElementById("ansL").style.color = "var(--greenL)";
+
+        }
+        function calLargeT() {
+
+            var num1 = parseInt(document.getElementById("num11").value);
+            var num2 = parseInt(document.getElementById("num22").value);
+            var num3 = parseInt(document.getElementById("num33").value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+
+                document.getElementById("ansLL").innerHTML = "Invalid Input";
+                document.getElementById("ansLL").style.color = "red";
+                return;
+            }
+            var ans = num1;
+
+            ans = (num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3));
+            document.getElementById("ansLL").innerHTML = ans;
+            document.getElementById("ansLL").style.color = "var(--greenL)";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
